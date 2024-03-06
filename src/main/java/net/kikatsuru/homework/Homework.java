@@ -97,7 +97,7 @@ public class Homework extends Application {
                         .addListElement(new CountryElement())
                         .addListElement(new CityElement())
                         .addListElement(new CountryLanguageElement());
-                this.setScreen(listScreen);
+                this.setScreen(listScreen, Environment.width, Environment.height + 200);
             }
         } catch (IOException ex) {
             LoginRegisterScreen screen = new LoginRegisterScreen();
@@ -124,7 +124,7 @@ public class Homework extends Application {
                     .addListElement(new CountryElement())
                     .addListElement(new CityElement())
                     .addListElement(new CountryLanguageElement());
-            this.setScreen(listScreen);
+            this.setScreen(listScreen, Environment.width, Environment.height + 200);
         } catch (IOException ex) {
             this.deleteUserProfile();
         }
@@ -146,7 +146,18 @@ public class Homework extends Application {
      * @param screen Screen.
      */
     public void setScreen(Pane screen) {
-        Homework.stage.setScene(new Scene(screen, Environment.width, Environment.height));
+        this.setScreen(screen, Environment.width, Environment.height);
+    }
+
+    /**
+     * Change current screen.
+     *
+     * @param screen Screen.
+     * @param width Width.
+     * @param height Height.
+     */
+    public void setScreen(Pane screen, double width, double height) {
+        Homework.stage.setScene(new Scene(screen, width, height));
         Homework.stage.getScene().addEventFilter(ContextMenuEvent.CONTEXT_MENU_REQUESTED, Event::consume);
         screen.setBackground(THEME.getGlobalBackground());
     }

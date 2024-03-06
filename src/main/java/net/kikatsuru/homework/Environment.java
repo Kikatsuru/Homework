@@ -28,7 +28,7 @@ public class Environment {
     /**
      * Default app height.
      */
-    public static final double height = 800;
+    public static final double height = 600;
 
     /**
      * Theme with default value.
