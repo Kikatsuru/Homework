@@ -6,7 +6,7 @@ import net.kikatsuru.homework.utils.Token;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "user")
+@Table(name = "session")
 public class UserSession {
     private static final UserSessionService service = new UserSessionService();
 

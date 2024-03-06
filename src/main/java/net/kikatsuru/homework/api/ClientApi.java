@@ -39,6 +39,7 @@ public class ClientApi implements Api {
     @Override
     public String login(String login, String password) {
         User user = User.getService().findByLoginAndPassword(login, Encrypt.sha512Encrypt(password));
+        System.out.println(user);
         if (user == null) {
             return null;
         }
@@ -60,11 +61,11 @@ public class ClientApi implements Api {
      */
     @Override
     public String register(String login, String password) {
-        if (User.getService().findByLoginAndPassword(login, Encrypt.sha512Encrypt(password)) != null) {
+        if (User.getService().findByLogin(login) != null) {
             return null;
         }
 
-        User user = new User(login, password);
+        User user = new User(login, Encrypt.sha512Encrypt(password));
         Token token = new Token(login, true, 86400);
         User.getService().persist(user);
 

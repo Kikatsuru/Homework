@@ -24,6 +24,14 @@ public class UserService {
         }
     }
 
+    public User findByLogin(String login) {
+        try (Session session = Hibernate.getSessionFactory().openSession()) {
+            Query<User> query = session.createQuery("FROM User WHERE LOWER(login) = LOWER(:login)", User.class);
+            query.setParameter("login", login);
+            return query.uniqueResult();
+        }
+    }
+
     public void persist(User user) {
         try (Session session = Hibernate.getSessionFactory().openSession()) {
             Transaction transaction = session.beginTransaction();
