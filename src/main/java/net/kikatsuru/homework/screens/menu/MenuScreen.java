@@ -2,6 +2,7 @@ package net.kikatsuru.homework.screens.menu;
 
 import javafx.geometry.Insets;
 import javafx.scene.Cursor;
+import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
@@ -9,8 +10,10 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import net.kikatsuru.homework.Environment;
+import net.kikatsuru.homework.api.Api;
 import net.kikatsuru.homework.themes.Theme;
 import net.kikatsuru.homework.utils.StyleUtils;
+import net.kikatsuru.homework.utils.elements.ButtonUtils;
 import net.kikatsuru.homework.utils.elements.FontUtils;
 import net.kikatsuru.homework.utils.elements.TextUtils;
 
@@ -19,7 +22,12 @@ import net.kikatsuru.homework.utils.elements.TextUtils;
  */
 public class MenuScreen extends BorderPane {
     /**
-     * Current theme
+     * Current api.
+     */
+    private static final Api API = Environment.api;
+
+    /**
+     * Current theme.
      */
     private static final Theme THEME = Environment.theme;
 
@@ -49,6 +57,14 @@ public class MenuScreen extends BorderPane {
         this.elementsPane.prefWidthProperty().bind(super.widthProperty().divide(4));
         this.elementsPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
         this.elementsPane.setContent(new VBox());
+
+        VBox logoutWrapper = new VBox();
+        logoutWrapper.setPadding(new Insets(20));
+        Button logout = ButtonUtils.createButton("Выйти", FontUtils.createFont());
+        logout.setOnMouseClicked(event -> API.logout());
+        logoutWrapper.getChildren().add(logout);
+        super.setTop(logoutWrapper);
+
         super.setLeft(this.elementsPane);
     }
 
