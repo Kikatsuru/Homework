@@ -1,0 +1,30 @@
+plugins {
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.13'
+}
+
+group = 'net.kikatsuru'
+
+repositories {
+    mavenCentral()
+    maven { url 'https://mvnrepository.com/artifact/net.kemitix/sqlite-dialect'}
+}
+
+dependencies {
+    compileOnly 'org.jetbrains:annotations:24.1.0'
+
+    implementation platform('org.hibernate.orm:hibernate-platform:6.4.4.Final')
+    implementation 'org.hibernate.orm:hibernate-community-dialects'
+    implementation 'org.xerial:sqlite-jdbc:3.45.1.0'
+    implementation 'org.hibernate.orm:hibernate-core'
+}
+
+javafx {
+    modules = [ 'javafx.controls' ]
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'net.kikatsuru.homework.Homework'
+    }
+}
