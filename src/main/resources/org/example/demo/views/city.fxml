@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #212121;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo.views.CityController">
+   <top>
+      <HBox prefWidth="200.0" style="-fx-spacing: 20;" BorderPane.alignment="CENTER">
+         <children>
+            <Button minHeight="30.0" mnemonicParsing="false" onMouseClicked="#onBackClicked" style="-fx-background-color: #6A52DA; -fx-background-radius: 20; -fx-font-size: 15;" text="Назад" textFill="WHITE">
+               <font>
+                  <Font name="Inter Regular" size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets></Button>
+             <Button fx:id="deleteButton" minHeight="30.0" mnemonicParsing="false" onMouseClicked="#onDeleteClicked" style="-fx-background-color: #6A52DA; -fx-background-radius: 20; -fx-font-size: 15;" text="Удалить" textFill="WHITE">
+                 <font>
+                     <Font name="Inter Regular" size="15.0" />
+                 </font>
+                 <cursor>
+                     <Cursor fx:constant="HAND" />
+                 </cursor>
+                 <opaqueInsets>
+                     <Insets />
+                 </opaqueInsets></Button>
+             <Button fx:id="saveButton" minHeight="30.0" mnemonicParsing="false" onMouseClicked="#onSaveClicked" style="-fx-background-color: #6A52DA; -fx-background-radius: 20; -fx-font-size: 15;" text="Сохранить" textFill="WHITE">
+                 <font>
+                     <Font name="Inter Regular" size="15.0" />
+                 </font>
+                 <cursor>
+                     <Cursor fx:constant="HAND" />
+                 </cursor>
+                 <opaqueInsets>
+                     <Insets />
+                 </opaqueInsets></Button>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="20.0" />
+         </padding>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </HBox>
+   </top>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+   <left>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefWidth="100.0">
+               <children>
+                  <Label text="Название" textFill="WHITE">
+                     <font>
+                        <Font name="Inter Regular" size="15.0" />
+                     </font>
+                  </Label>
+                   <TextField fx:id="nameField" maxWidth="200.0" minHeight="40.0" minWidth="200.0" promptText="Название" style="-fx-background-color: #181818; -fx-background-radius: 20; -fx-text-fill: white;">
+                       <font>
+                           <Font name="Inter Regular" size="15.0" />
+                       </font>
+                   </TextField>
+               </children>
+            </VBox>
+             <VBox prefWidth="100.0">
+                 <children>
+                     <Label text="Код страны" textFill="WHITE">
+                         <font>
+                             <Font name="Inter Regular" size="15.0" />
+                         </font>
+                     </Label>
+                     <TextField fx:id="countryCodeField" maxWidth="200.0" minHeight="40.0" minWidth="200.0" promptText="Код страны" style="-fx-background-color: #181818; -fx-background-radius: 20; -fx-text-fill: white;">
+                         <font>
+                             <Font name="Inter Regular" size="15.0" />
+                         </font>
+                     </TextField>
+                 </children>
+             </VBox>
+             <VBox prefWidth="100.0">
+                 <children>
+                     <Label text="Округ" textFill="WHITE">
+                         <font>
+                             <Font name="Inter Regular" size="15.0" />
+                         </font>
+                     </Label>
+                     <TextField fx:id="districtField" maxWidth="200.0" minHeight="40.0" minWidth="200.0" promptText="Округ" style="-fx-background-color: #181818; -fx-background-radius: 20; -fx-text-fill: white;">
+                         <font>
+                             <Font name="Inter Regular" size="15.0" />
+                         </font>
+                     </TextField>
+                 </children>
+             </VBox>
+             <VBox prefWidth="100.0">
+                 <children>
+                     <Label text="Население" textFill="WHITE">
+                         <font>
+                             <Font name="Inter Regular" size="15.0" />
+                         </font>
+                     </Label>
+                     <TextField fx:id="populationField" maxWidth="200.0" minHeight="40.0" minWidth="200.0" promptText="Население" style="-fx-background-color: #181818; -fx-background-radius: 20; -fx-text-fill: white;">
+                         <font>
+                             <Font name="Inter Regular" size="15.0" />
+                         </font>
+                     </TextField>
+                 </children>
+             </VBox>
+         </children></VBox>
+   </left>
+</BorderPane>

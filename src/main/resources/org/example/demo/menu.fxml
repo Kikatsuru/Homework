@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane fx:id="mainPain" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #181818;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo.views.MenuController">
+   <left>
+      <VBox prefHeight="600.0" prefWidth="145.0" style="-fx-background-color: #212121;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="logoutButton" alignment="TOP_CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#logout" style="-fx-background-color: #6A52DA; -fx-background-radius: 0;" text="Выйти" textAlignment="CENTER" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="Inter Regular" size="15.0" />
+               </font></Button>
+            <Button alignment="BASELINE_LEFT" maxWidth="1.7976931348623157E308" minHeight="50.0" mnemonicParsing="false" onMouseClicked="#openCity" style="-fx-background-color: #212121;" text="Города" textFill="WHITE">
+               <font>
+                  <Font name="Inter Regular" size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+         </children>
+      </VBox>
+   </left>
+</BorderPane>

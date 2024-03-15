@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #181818;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo.views.AuthController">
+   <center>
+      <VBox alignment="CENTER" maxHeight="400.0" maxWidth="400.0" spacing="20.0" style="-fx-background-color: #212121; -fx-background-radius: 20;" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="headerText" text="Авторизация" textFill="WHITE">
+               <font>
+                  <Font name="Inter Regular" size="30.0" />
+               </font>
+            </Label>
+            <TextField fx:id="loginField" maxWidth="193.0" minHeight="40.0" promptText="Логин" style="-fx-background-color: #181818; -fx-background-radius: 20; -fx-text-fill: white;">
+               <font>
+                  <Font name="Inter Regular" size="15.0" />
+               </font>
+            </TextField>
+            <PasswordField fx:id="passwordField" maxWidth="193.0" minHeight="40.0" promptText="Пароль" style="-fx-background-color: #181818; -fx-background-radius: 20; -fx-text-fill: white;">
+               <font>
+                  <Font name="Inter Regular" size="15.0" />
+               </font>
+            </PasswordField>
+            <Button fx:id="submitButton" maxWidth="193.0" minHeight="40.0" mnemonicParsing="false" onMouseClicked="#onSubmit" style="-fx-background-color: #6A52DA; -fx-background-radius: 20; -fx-font-size: 15;" text="Войти" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Label fx:id="changeText" onMouseClicked="#onChange" text="Регистрация" textFill="#6a52da">
+               <font>
+                  <Font name="Inter Regular" size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <Label fx:id="errorText" textFill="RED">
+               <font>
+                  <Font name="Inter Regular" size="15.0" />
+               </font>
+            </Label>
+         </children></VBox>
+   </center>
+</BorderPane>
